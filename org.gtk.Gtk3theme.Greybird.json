@@ -1,0 +1,44 @@
+{
+  "id": "org.gtk.Gtk3theme.Greybird",
+  "branch": "3.22",
+  "runtime": "org.gnome.Sdk",
+  "build-extension": true,
+  "sdk": "org.gnome.Sdk",
+  "runtime-version": "3.24",
+  "appstream-compose": false,
+  "separate-locales": false,
+  "modules": [
+    {
+      "name": "greybird",
+      "buildsystem": "simple",
+      "build-commands": [
+        "install -dm755 /usr/share/runtime/share/themes/Greybird/gtk-3.0",
+        "cp -a gtk-3.0/*.css /usr/share/runtime/share/themes/Greybird/gtk-3.0",
+        "cp -aRL gtk-3.0/apps /usr/share/runtime/share/themes/Greybird/gtk-3.0",
+        "cp -aRL gtk-3.0/assets /usr/share/runtime/share/themes/Greybird/gtk-3.0"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://github.com/shimmerproject/Greybird/archive/v3.22.3.tar.gz",
+          "sha256": "7b81451f6157c49e4a8b01c4889668c3bc7653fc0a910e536a615705fbb5aec3"
+        }
+      ]
+    },
+    {
+      "name": "appdata",
+      "buildsystem": "simple",
+      "build-commands": [
+        "mkdir -p ${FLATPAK_DEST}/share/appdata",
+        "cp org.gtk.Gtk3theme.Greybird.appdata.xml ${FLATPAK_DEST}/share/appdata",
+        "appstream-compose --basename=org.gtk.Gtk3theme.Greybird --prefix=${FLATPAK_DEST} --origin=flatpak org.gtk.Gtk3theme.Greybird"
+      ],
+      "sources": [
+        {
+          "type": "file",
+          "path": "org.gtk.Gtk3theme.Greybird.appdata.xml"
+        }
+      ]
+  }
+  ]
+}
