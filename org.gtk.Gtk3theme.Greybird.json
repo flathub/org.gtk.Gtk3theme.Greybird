@@ -1,6 +1,6 @@
 {
     "id": "org.gtk.Gtk3theme.Greybird",
-    "branch": "3.22",
+    "branch": "3.23",
     "runtime": "org.freedesktop.Platform",
     "runtime-version": "19.08",
     "sdk": "org.freedesktop.Sdk",
@@ -61,7 +61,7 @@
           {
             "type": "git",
             "url": "https://github.com/shimmerproject/Greybird.git",
-            "tag": "v3.22.12"
+            "tag": "v3.23.1"
           }
         ]
       },
