@@ -7,6 +7,7 @@
     "build-extension": true,
     "appstream-compose": false,
     "separate-locales": false,
+    "skip-icons-check": true,
     "build-options": {
       "prefix": "/usr/share/runtime/share/themes/Greybird/gtk-3.0"
     },
